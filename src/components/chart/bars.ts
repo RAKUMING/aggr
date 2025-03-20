@@ -1,5 +1,8 @@
 import { Bar, Renderer } from './chart.d'
 import { PrependState, registerPrependFromRealtime } from './prepend'
+window.ultimaBarraCerrada = null; // Declaración global
+
+
 
 /**
  * fresh start for the renderer bar (and all its sources / markets)
@@ -33,6 +36,7 @@ export function resetBar(bar: Bar) {
     bar.open = bar.close
     bar.high = bar.close
     bar.low = bar.close
+    window.ultimaBarraCerrada = bar.close;
   }
 
   bar.vbuy = 0
